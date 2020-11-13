@@ -59,4 +59,9 @@ logging:
     org:
       springframework:
         web: debug
+        
+who:
+  am:
+    i: zuul svr
+
 

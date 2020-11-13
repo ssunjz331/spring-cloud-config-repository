@@ -14,3 +14,5 @@ management:
       exposure:
         include: refresh, env
 
+example:
+  phase: "default-refresh"

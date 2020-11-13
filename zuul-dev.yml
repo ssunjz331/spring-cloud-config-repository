@@ -6,6 +6,10 @@ server:
   port: 8765
 
 zuul:
+ routes:
+   service-a:
+     path: /first/**
+     url: http://localhost:8181  #수동등록
   ribbon:
     eager-load:
       enabled: true

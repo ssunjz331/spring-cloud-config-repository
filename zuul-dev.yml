@@ -65,12 +65,12 @@ ratelimit:
     repository: BUCKET4J_JCACHE 
     policy-list:
       service-a:
-        - limit: 5
+        - limit: 10
           refresh-interval: 60
           type:
             - origin
       service-b:
-        - limit: 1
+        - limit: 10
           refresh-interval: 2
           type:
             - origin

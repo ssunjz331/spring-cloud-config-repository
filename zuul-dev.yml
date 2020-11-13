@@ -60,3 +60,18 @@ logging:
       springframework:
         web: debug
         
+ratelimit:
+    enabled: true
+    repository: JPA
+    policy-list:
+      service-a:
+        - limit: 5
+          refresh-interval: 60
+          type:
+            - origin
+      service-b:
+        - limit: 1
+          refresh-interval: 2
+          type:
+            - origin
+  strip-prefix: true

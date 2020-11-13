@@ -16,3 +16,8 @@ eureka:
 
 # example:
 #   phase: "default-refresh"
+
+
+who:
+  am:
+    i: dev-service-a

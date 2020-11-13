@@ -8,7 +8,9 @@ eureka:
       defaultZone: http://localhost:8761/eureka  # default address
     register-with-eureka: true
 
-config:
-  client:
-    version: "message"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, env
 

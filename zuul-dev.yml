@@ -62,7 +62,7 @@ logging:
         
 ratelimit:
     enabled: true
-    repository: JPA
+    repository: BUCKET4J_JCACHE 
     policy-list:
       service-a:
         - limit: 5

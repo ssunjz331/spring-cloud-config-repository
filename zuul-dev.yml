@@ -75,3 +75,7 @@ ratelimit:
           type:
             - origin
   strip-prefix: true
+  
+service-a:
+  ribbon:
+    lisfOfServers: localhost:8181, localhost:8183

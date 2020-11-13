@@ -1,5 +1,5 @@
 server:
-  port: 8183
+  port: 8182
 
 eureka:
   instance:
@@ -10,6 +10,6 @@ eureka:
       defaultZone: http://localhost:8761/eureka  # default address
     register-with-eureka: true
   
-  service-b:
-    table:
-      max-threads: 27
+#   service-b:
+#     table:
+#       max-threads: 27

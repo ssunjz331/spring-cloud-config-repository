@@ -16,8 +16,8 @@ zuul:
   ratelimit:
     enabled: true
     repository: BUCKET4J_JCACHE
-    serviceSimple:
-      service-a:
+    policy-list:
+      serviceSimple:
         - limit: 5
           refresh-interval: 60  # 5 requests / 60s
           type:

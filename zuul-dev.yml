@@ -6,36 +6,22 @@ server:
   port: 8765
 
 zuul:
-  routes:
-    serviceSimple:
-      path: /service-a/simple
-      url: localhost:8181/service-a/simple
-    serviceAdvanced:
-      path: /service-a/advanced
-      url: localhost:8181/service-a/advanced
-  ratelimit:
-    enabled: true
-    repository: BUCKET4J_JCACHE
-    policy-list:
-      serviceSimple:
-        - limit: 5
-          refresh-interval: 60  # 5 requests / 60s
-          type:
-            - origin
-      serviceAdvanced:
-        - limit: 1
-          refresh-interval: 2   # 1 request / 2s
-          type:
-            - origin
-    strip-prefix: true
+#  routes:
+#    serviceSimple:
+#      path: /service-a/simple
+#      url: localhost:8765/service-a/simple
+#    serviceAdvanced:
+#      path: /service-a/advanced
+#      url: localhost:8181/service-a/advanced
   ribbon:
     eager-load:
       enabled: true
     ConnectTimeout: 3000
     ReadTimeout: 60000
-    ribbonIsolationStrategy: THREAD
-    treadpool:
-      useSeparateThreadPools: true
+  ribbonIsolationStrategy: THREAD
+  treadpool:
+    useSeparateThreadPools: true
+
 
 
 
@@ -83,7 +69,21 @@ logging:
       springframework:
         web: debug
 
-
+ratelimit:
+  enabled: true
+  repository: BUCKET4J_JCACHE
+  policy-list:
+    serviceSimple:
+      - limit: 10
+        refresh-interval: 60
+        type:
+          - origin
+    serviceAdvanced:
+      - limit: 10
+        refresh-interval: 2
+        type:
+          - origin
+  strip-prefix: true
 
 service-a:
   ribbon:

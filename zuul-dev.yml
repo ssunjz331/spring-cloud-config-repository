@@ -6,33 +6,36 @@ server:
   port: 8765
 
 zuul:
-  #  routes:
-  #    service-a:
-  #      path: /first/**
-  #      url: http://localhost:8181  #수동등록
+  routes:
+    serviceSimple:
+      path: /service-a/simple
+      url: forward:/
+    serviceAdvanced:
+      path: /service-a/advanced
+      url: forward:/
+  ratelimit:
+    enabled: true
+    repository: BUCKET4J_JCACHE
+    serviceSimple:
+      service-a:
+        - limit: 5
+          refresh-interval: 60  # 5 requests / 60s
+          type:
+            - origin
+      serviceAdvanced:
+        - limit: 1
+          refresh-interval: 2   # 1 request / 2s
+          type:
+            - origin
+    strip-prefix: true
   ribbon:
     eager-load:
       enabled: true
     ConnectTimeout: 3000
     ReadTimeout: 60000
-  ribbonIsolationStrategy: THREAD
-  treadpool:
-    useSeparateThreadPools: true
-  ratelimit:
-    enabled: true
-    repository: BUCKET4J_JCACHE
-    policy-list:
-      service-a:
-        - limit: 10
-          refresh-interval: 60
-          type:
-            - origin
-      service-b:
-        - limit: 10
-          refresh-interval: 2
-          type:
-            - origin
-    strip-prefix: true
+    ribbonIsolationStrategy: THREAD
+    treadpool:
+      useSeparateThreadPools: true
 
 
 

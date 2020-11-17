@@ -3,13 +3,13 @@ spring:
     name: zuul
 
 server:
-  port: 8765
+  port: 108765
 
 zuul:
 #  routes:
 #    service-a:
 #      path: /first/**
-#      url: http://localhost:8181  #수동등록
+#      url: http://localhost:108181  #수동등록
   ribbon:
     eager-load:
       enabled: true
@@ -28,7 +28,7 @@ eureka:
     fetchRegistry: true
     registry-sync-retries: 5
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:108761/eureka/
 
 
 
@@ -76,6 +76,6 @@ ratelimit:
             - origin
   strip-prefix: true
   
-service-a:
-  ribbon:
-    lisfOfServers: localhost:8181, localhost:8183
+# service-a:
+#   ribbon:
+#     lisfOfServers: localhost:108181, localhost:8183

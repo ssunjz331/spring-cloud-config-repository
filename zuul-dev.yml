@@ -9,10 +9,10 @@ zuul:
   routes:
     serviceSimple:
       path: /service-a/simple
-      url: forward:/
+      url: localhost:8766/service-a/simple
     serviceAdvanced:
       path: /service-a/advanced
-      url: forward:/
+      url: localhost:8765/service-a/advanced
   ratelimit:
     enabled: true
     repository: BUCKET4J_JCACHE

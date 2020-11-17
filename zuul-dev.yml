@@ -9,7 +9,7 @@ zuul:
   routes:
     serviceSimple:
       path: /service-a/simple
-      url: localhost:8766/service-a/simple
+      url: localhost:8765/service-a/simple
     serviceAdvanced:
       path: /service-a/advanced
       url: localhost:8765/service-a/advanced

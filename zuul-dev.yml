@@ -1,12 +1,12 @@
-
 spring:
   application:
     name: zuul
 #  autoconfigure:
 #    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-  datasource: 
+  datasource:
     username: zuul
     password: zuuldatasource
+
 
 zuul:
   routes:
@@ -34,14 +34,14 @@ zuul:
             - origin
     strip-prefix: true
 
-  ribbon:
-    eager-load:
-      enabled: true
-    ConnectTimeout: 3000
-    ReadTimeout: 60000
-  ribbonIsolationStrategy: THREAD
-  treadpool:
-    useSeparateThreadPools: true
+#  ribbon:
+#    eager-load:
+#      enabled: true
+#    ConnectTimeout: 3000
+#    ReadTimeout: 60000
+#  ribbonIsolationStrategy: THREAD
+#  treadpool:
+#    useSeparateThreadPools: true
 
 
 
@@ -88,17 +88,17 @@ hystrix:
   dashboard:
     proxy-stream-allow-list: '*'
 
-# management:
-#   endpoints:
-#     web:
-#       exposure:
-#         include: '*'
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
 
-# logging:
-#   level:
-#     org:
-#       springframework:
-#         web: debug
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        web: debug
 
 
 
@@ -109,7 +109,7 @@ service-a:
       enable: true
     NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
     ConnectTimeout: 5000
-    ReadTimeout: 5000
+    ReadTimeout: 3000
     MaxTotalHttpConnections: 500
     MaxConnectionsPerHost: 100
     MaxAutoRetriesNextServer: 1
@@ -117,7 +117,7 @@ service-a:
 service-b:
   ribbon:
     ConnectTimeout: 5000
-    ReadTimeout: 5000
+    ReadTimeout: 3000
     MaxTotalHttpConnections: 500
     MaxConnectionsPerHost: 100
     MaxAutoRetriesNextServer: 1

@@ -2,8 +2,11 @@
 spring:
   application:
     name: zuul
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+#  autoconfigure:
+#    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  datasource: 
+    username: zuul
+    password: zuuldatasource
 
 zuul:
   routes:

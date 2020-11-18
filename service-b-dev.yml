@@ -1,19 +1,11 @@
+spring:
+  application:
+    name: service-b
 
 eureka:
   instance:
     prefer-ip-address: true
-##    statusPageUrlPath: ${server.servletPath}/info
-##    healthCheckUrlPath: ${server.servletPath}/health
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka  # default address
     register-with-eureka: true
-  
-#   service-b:
-#     table:
-#       max-threads: 27
-
-
-spring:
-  application:
-    name: service-b

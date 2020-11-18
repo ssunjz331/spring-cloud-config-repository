@@ -1,5 +1,3 @@
-server:
-  port: 108182
 
 eureka:
   instance:

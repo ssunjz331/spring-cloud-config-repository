@@ -5,12 +5,8 @@ spring:
 
 zuul:
   routes:
-    serviceSimple:
-      path: /service-a/simple/**
-      serviceId: service-a
-      stripPrefix: false
-    serviceAdvanced:
-      path: /service-a/advanced/**
+    service-a:
+      path: /service-a/**
       serviceId: service-a
       stripPrefix: false
   ratelimit:

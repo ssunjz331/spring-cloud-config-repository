@@ -27,11 +27,11 @@ zuul:
           refresh-interval: 2
           type:
             - origin
-#      service-b:
-#        - limit: 5
-#          refresh-interval: 2
-#          type:
-#            - origin
+     service-b:
+       - limit: 3
+         refresh-interval: 2
+         type:
+           - origin
     strip-prefix: true
 
 #  ribbon:

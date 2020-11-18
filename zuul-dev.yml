@@ -22,16 +22,16 @@ zuul:
     deny-request:
       response-status-code: 404
     policy-list:
-      serviceSimple:
-        - limit: 5
-          refresh-interval: 60
-          type:
-            - origin
-      serviceAdvanced:
-        - limit: 5
+      service-a:
+        - limit: 2
           refresh-interval: 2
           type:
             - origin
+#      service-b:
+#        - limit: 5
+#          refresh-interval: 2
+#          type:
+#            - origin
     strip-prefix: true
 
 #  ribbon:

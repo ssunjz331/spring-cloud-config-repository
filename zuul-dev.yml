@@ -23,12 +23,12 @@ zuul:
       response-status-code: 404
     policy-list:
       serviceSimple:
-        - limit: 10
+        - limit: 5
           refresh-interval: 60
           type:
             - origin
       serviceAdvanced:
-        - limit: 10
+        - limit: 5
           refresh-interval: 2
           type:
             - origin
@@ -108,7 +108,7 @@ service-a:
     eureka:
       enable: true
     NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
-    ConnectTimeout: 5000
+    ConnectTimeout: 1000
     ReadTimeout: 3000
     MaxTotalHttpConnections: 500
     MaxConnectionsPerHost: 100
@@ -116,7 +116,7 @@ service-a:
 
 service-b:
   ribbon:
-    ConnectTimeout: 5000
+    ConnectTimeout: 1000
     ReadTimeout: 3000
     MaxTotalHttpConnections: 500
     MaxConnectionsPerHost: 100

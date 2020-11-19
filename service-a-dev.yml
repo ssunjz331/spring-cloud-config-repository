@@ -15,11 +15,11 @@ eureka:
 
 hystrix:
   command:
-    veruWelcome:
+    veryWelcome:
       execution:
         isolation:
           thread:
             timeoutInMilliseconds: 3000  
       circuitBreaker:
-        requestVolumeThreshold: 1            
+        requestVolumeThreshold: 10            
         errorThresholdPercentage: 50  

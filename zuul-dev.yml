@@ -1,4 +1,5 @@
 
+
 spring:
   application:
     name: zuul
@@ -10,11 +11,14 @@ spring:
 
 
 zuul:
-#  routes:
-#    service-a:
-#      path: /service-a/**
-#      serviceId: service-a
-#      stripPrefix: false
+  routes:
+    service-a:
+      path: /service-a/**
+      serviceId: service-a
+      stripPrefix: false
+  SendErrorFilter:
+    error:
+    disabled: true
   ratelimit:
     enabled: true
     repository: BUCKET4J_JCACHE
@@ -58,13 +62,13 @@ eureka:
 
 
 
-# hystrix:
-#   command:
-#     default:
-#       execution:
-#         isolation:
-#           thread:
-#             timeoutInMilliseconds: 10000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
 #      circuitBreaker:
 #        enabled: true
 #        requestVolumeThreshold: 3
@@ -73,11 +77,11 @@ eureka:
 #      metrics:
 #        rollingStats:
 #          timeInMilliseconds: 10000
-#     service-a:
-#       execution:
-#         isolation:
-#           thread:
-#             timeoutInMilliseconds: 10000
+    service-a:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
 #    service-b:
 #      execution:
 #        isolation:
@@ -103,8 +107,8 @@ eureka:
 service-a:
   ribbon:
     ConnectTimeout: 1000
-    ReadTimeout: 3000
-    MaxTotalHttpConnections: 500
+    ReadTimeout: 1000
+    MaxTotalHttpConnections: 300
     MaxConnectionsPerHost: 100
     MaxAutoRetriesNextServer: 1
 

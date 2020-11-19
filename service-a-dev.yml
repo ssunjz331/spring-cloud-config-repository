@@ -13,6 +13,13 @@ eureka:
 
 
 
-who:
-  am:
-    i: dev-service-a
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000  
+      circuitBreaker:
+        requestVolumeThreshold: 1            
+        errorThresholdPercentage: 50  

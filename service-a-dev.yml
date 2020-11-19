@@ -11,15 +11,18 @@ eureka:
     register-with-eureka: true
 
 
-
-
 hystrix:
   command:
     veryWelcome:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 3000  
+            timeoutInMilliseconds: 3000
       circuitBreaker:
-        requestVolumeThreshold: 10            
-        errorThresholdPercentage: 50  
+        requestVolumeThreshold: 10
+        errorThresholdPercentage: 50
+        
+service-b:
+  ribbon:
+    MaxAutoRetries: 0
+    MaxAutoRetriesNextServer: 1

@@ -95,10 +95,6 @@ hystrix:
 
 service-a:
   ribbon:
-    #    lisfOfServers: localhost:8181, localhost:8183
-    eureka:
-      enable: true
-    NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
     ConnectTimeout: 1000
     ReadTimeout: 3000
     MaxTotalHttpConnections: 500

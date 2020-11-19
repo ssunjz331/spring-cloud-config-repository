@@ -1,3 +1,4 @@
+
 spring:
   application:
     name: zuul
@@ -9,11 +10,11 @@ spring:
 
 
 zuul:
-#   routes:
-#     service-a:
-#       path: /service-a/**
-#       serviceId: service-a
-#       stripPrefix: false
+#  routes:
+#    service-a:
+#      path: /service-a/**
+#      serviceId: service-a
+#      stripPrefix: false
   ratelimit:
     enabled: true
     repository: BUCKET4J_JCACHE
@@ -23,12 +24,14 @@ zuul:
       response-status-code: 404
     policy-list:
       service-a:
-        - limit: 2
-          refresh-interval: 2
+        - limit: 3
+          refresh-interval: 10
           type:
             - origin
     strip-prefix: true
-
+  ribbonIsolationStrategy: THREAD
+  tread-pool:
+    useSeparateThreadPools: true
 #  ribbon:
 #    eager-load:
 #      enabled: true
@@ -61,7 +64,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 3000
+            timeoutInMilliseconds: 1000
 #      circuitBreaker:
 #        enabled: true
 #        requestVolumeThreshold: 3
@@ -75,7 +78,11 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 10000
-    
+#    service-b:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 10000
   dashboard:
     proxy-stream-allow-list: '*'
 

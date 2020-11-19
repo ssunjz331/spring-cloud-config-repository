@@ -58,13 +58,13 @@ eureka:
 
 
 
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 1000
+# hystrix:
+#   command:
+#     default:
+#       execution:
+#         isolation:
+#           thread:
+#             timeoutInMilliseconds: 10000
 #      circuitBreaker:
 #        enabled: true
 #        requestVolumeThreshold: 3
@@ -73,11 +73,11 @@ hystrix:
 #      metrics:
 #        rollingStats:
 #          timeInMilliseconds: 10000
-    service-a:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 10000
+#     service-a:
+#       execution:
+#         isolation:
+#           thread:
+#             timeoutInMilliseconds: 10000
 #    service-b:
 #      execution:
 #        isolation:

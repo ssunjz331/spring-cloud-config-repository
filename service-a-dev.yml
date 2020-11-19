@@ -15,7 +15,7 @@ eureka:
 
 hystrix:
   command:
-    default:
+    veruWelcome:
       execution:
         isolation:
           thread:

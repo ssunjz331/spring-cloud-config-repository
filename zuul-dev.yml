@@ -9,11 +9,11 @@ spring:
 
 
 zuul:
-  routes:
-    service-a:
-      path: /service-a/**
-      serviceId: service-a
-      stripPrefix: false
+#   routes:
+#     service-a:
+#       path: /service-a/**
+#       serviceId: service-a
+#       stripPrefix: false
   ratelimit:
     enabled: true
     repository: BUCKET4J_JCACHE

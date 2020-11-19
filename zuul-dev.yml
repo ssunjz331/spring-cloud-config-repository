@@ -96,11 +96,10 @@ hystrix:
 #      exposure:
 #        include: '*'
 
-#logging:
-#  level:
-#    org:
-#      springframework:
-#        web: debug
+logging:
+  level:
+    org.springframework.retry: DEBUG
+    com.netflix.loadbalancer.LoadBalancerContext: debug
 
 
 

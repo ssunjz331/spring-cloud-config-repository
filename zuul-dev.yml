@@ -35,7 +35,7 @@ zuul:
           refresh-interval: 60
           type:
             - origin
-   strip-prefix: true
+  stripPrefix: true
   ribbonIsolationStrategy: THREAD
   tread-pool:
     useSeparateThreadPools: true

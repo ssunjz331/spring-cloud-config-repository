@@ -21,9 +21,9 @@ zuul:
       serviceId: service-b
       stripPrefix: true
       
-#  SendErrorFilter:
-#    error:
-#    disabled: true
+ SendErrorFilter:
+   error:
+   disabled: true
   ratelimit:
     enabled: true
     repository: BUCKET4J_JCACHE

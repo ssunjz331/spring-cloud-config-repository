@@ -13,14 +13,14 @@ eureka:
 
 hystrix:
   command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 10000
-      circuitBreaker:
-        requestVolumeThreshold: 20
-        errorThresholdPercentage: 50
+#     default:
+#       execution:
+#         isolation:
+#           thread:
+#             timeoutInMilliseconds: 10000
+#       circuitBreaker:
+#         requestVolumeThreshold: 20
+#         errorThresholdPercentage: 50
     veryWelcome:
       execution:
         isolation:

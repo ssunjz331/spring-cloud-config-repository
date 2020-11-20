@@ -9,15 +9,15 @@ spring:
 
 
 zuul:
-  routes:
-    service-a:
-      path: /service-a/**
-      serviceId: service-a
-      stripPrefix: true
-    service-b:
-      path: /service-b/**
-      serviceId: service-b
-      stripPrefix: true
+#   routes:
+#     service-a:
+#       path: /service-a/**
+#       serviceId: service-a
+#       stripPrefix: true
+#     service-b:
+#       path: /service-b/**
+#       serviceId: service-b
+#       stripPrefix: true
       
 #  SendErrorFilter:
 #    error:
@@ -35,7 +35,7 @@ zuul:
           refresh-interval: 60
           type:
             - origin
-#    strip-prefix: true
+   strip-prefix: true
   ribbonIsolationStrategy: THREAD
   tread-pool:
     useSeparateThreadPools: true

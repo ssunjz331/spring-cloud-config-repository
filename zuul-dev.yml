@@ -9,6 +9,8 @@ spring:
 
 
 zuul:
+  stripPrefix: true
+#   ignored-services: '*'
 #   routes:
 #     service-a:
 #       path: /service-a/**
@@ -35,7 +37,7 @@ zuul:
           refresh-interval: 60
           type:
             - origin
-  stripPrefix: true
+  
   ribbonIsolationStrategy: THREAD
   tread-pool:
     useSeparateThreadPools: true

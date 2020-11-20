@@ -14,7 +14,7 @@ zuul:
     service-a:
       path: /service-a/**
       serviceId: service-a
-      stripPrefix: false
+      stripPrefix: true
 #  SendErrorFilter:
 #    error:
 #    disabled: true

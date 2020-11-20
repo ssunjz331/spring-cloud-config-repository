@@ -23,7 +23,8 @@ zuul:
       
  SendErrorFilter:
    error:
-   disabled: true
+   disable: true
+   
   ratelimit:
     enabled: true
     repository: BUCKET4J_JCACHE

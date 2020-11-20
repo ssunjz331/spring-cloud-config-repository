@@ -11,6 +11,7 @@ spring:
 
 
 zuul:
+  ignored-services: '*'
 #   routes:
 #     service-a:
 #       path: /service-a/**

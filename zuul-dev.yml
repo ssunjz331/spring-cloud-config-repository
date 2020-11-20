@@ -1,11 +1,7 @@
 spring:
   application:
     name: zuul
- routes:
-   service-a:
-     path: /service-a/**
-     serviceId: service-a
-     stripPrefix: false
+    
 #  autoconfigure:
 #    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 #  datasource:
@@ -14,7 +10,6 @@ spring:
 
 
 zuul:
-  ignored-services: '*'
   routes:
     service-a:
       path: /service-a/**

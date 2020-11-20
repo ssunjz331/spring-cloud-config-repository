@@ -1,25 +1,28 @@
-
-
 spring:
   application:
     name: zuul
+#  routes:
+#    service-a:
+#      path: /service-a/**
+#      serviceId: service-a
+#      stripPrefix: false
 #  autoconfigure:
 #    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-#   datasource:
-#     username: zuul
-#     password: zuuldatasource
+#  datasource:
+#    username: zuul
+#    password: zuuldatasource
 
 
 zuul:
   ignored-services: '*'
-#   routes:
-#     service-a:
-#       path: /service-a/**
-#       serviceId: service-a
-#       stripPrefix: false
-#   SendErrorFilter:
-#     error:
-#     disabled: true
+  routes:
+    service-a:
+      path: /service-a/**
+      serviceId: service-a
+      stripPrefix: false
+#  SendErrorFilter:
+#    error:
+#    disabled: true
   ratelimit:
     enabled: true
     repository: BUCKET4J_JCACHE
@@ -33,10 +36,10 @@ zuul:
           refresh-interval: 60
           type:
             - origin
-#     strip-prefix: true
+#    strip-prefix: true
   ribbonIsolationStrategy: THREAD
   tread-pool:
-    use-separate-thread-pools: true
+    useSeparateThreadPools: true
 #  ribbon:
 #    eager-load:
 #      enabled: true
@@ -88,8 +91,8 @@ hystrix:
 #        isolation:
 #          thread:
 #            timeoutInMilliseconds: 10000
-  dashboard:
-    proxy-stream-allow-list: '*'
+#  dashboard:
+#    proxy-stream-allow-list: '*'
 
 #management:
 #  endpoints:
@@ -97,19 +100,17 @@ hystrix:
 #      exposure:
 #        include: '*'
 
-# logging:
-#   level:
-#     org.springframework.retry: DEBUG
-#     com.netflix.loadbalancer.LoadBalancerContext: debug
+logging:
+  level:
+#    org.springframework.web: debug
+    com.netflix.loadbalancer.LoadBalancerContext: debug
 
 
 
-service-a:
-  ribbon:
-    ConnectTimeout: 1000
-    ReadTimeout: 1000
-    MaxTotalHttpConnections: 300
-    MaxConnectionsPerHost: 100
-    MaxAutoRetriesNextServer: 1
-
-
+#service-a:
+#  ribbon:
+#    ConnectTimeout: 1000
+#    ReadTimeout: 1000
+#    MaxTotalHttpConnections: 300
+#    MaxConnectionsPerHost: 100
+#    MaxAutoRetriesNextServer: 1

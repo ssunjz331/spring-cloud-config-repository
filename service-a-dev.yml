@@ -25,9 +25,9 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 10000
+            timeoutInMilliseconds: 3000
       circuitBreaker:
-        requestVolumeThreshold: 20
+        requestVolumeThreshold: 10
         errorThresholdPercentage: 50
         
 service-b:

@@ -9,7 +9,7 @@ spring:
 
 
 zuul:
-  stripPrefix: true
+  strip-prefix: true
 #   ignored-services: '*'
 #   routes:
 #     service-a:

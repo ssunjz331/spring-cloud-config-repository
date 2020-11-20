@@ -107,10 +107,13 @@ logging:
 
 
 
-#service-a:
-#  ribbon:
-#    ConnectTimeout: 1000
-#    ReadTimeout: 1000
-#    MaxTotalHttpConnections: 300
-#    MaxConnectionsPerHost: 100
-#    MaxAutoRetriesNextServer: 1
+service-a:
+  ribbon:
+    listOfServers:
+      localhost:8181, localhost:8281
+    NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+    ConnectTimeout: 1000
+    ReadTimeout: 1000
+    MaxTotalHttpConnections: 300
+    MaxConnectionsPerHost: 100
+    MaxAutoRetriesNextServer: 1

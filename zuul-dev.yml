@@ -15,6 +15,11 @@ zuul:
       path: /service-a/**
       serviceId: service-a
       stripPrefix: true
+    service-b:
+      path: /service-b/**
+      serviceId: service-b
+      stripPrefix: true
+      
 #  SendErrorFilter:
 #    error:
 #    disabled: true

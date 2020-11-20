@@ -5,17 +5,17 @@ spring:
     name: zuul
 #  autoconfigure:
 #    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-  datasource:
-    username: zuul
-    password: zuuldatasource
+#   datasource:
+#     username: zuul
+#     password: zuuldatasource
 
 
 zuul:
-  routes:
-    service-a:
-      path: /service-a/**
-      serviceId: service-a
-      stripPrefix: false
+#   routes:
+#     service-a:
+#       path: /service-a/**
+#       serviceId: service-a
+#       stripPrefix: false
 #   SendErrorFilter:
 #     error:
 #     disabled: true
@@ -28,14 +28,14 @@ zuul:
       response-status-code: 404
     policy-list:
       service-a:
-        - limit: 3
-          refresh-interval: 10
+        - limit: 10
+          refresh-interval: 60
           type:
             - origin
-    strip-prefix: true
+#     strip-prefix: true
   ribbonIsolationStrategy: THREAD
   tread-pool:
-    useSeparateThreadPools: true
+    use-separate-thread-pools: true
 #  ribbon:
 #    eager-load:
 #      enabled: true
@@ -96,10 +96,10 @@ hystrix:
 #      exposure:
 #        include: '*'
 
-logging:
-  level:
-    org.springframework.retry: DEBUG
-    com.netflix.loadbalancer.LoadBalancerContext: debug
+# logging:
+#   level:
+#     org.springframework.retry: DEBUG
+#     com.netflix.loadbalancer.LoadBalancerContext: debug
 
 
 

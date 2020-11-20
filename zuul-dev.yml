@@ -16,9 +16,9 @@ zuul:
       path: /service-a/**
       serviceId: service-a
       stripPrefix: false
-  SendErrorFilter:
-    error:
-    disabled: true
+#   SendErrorFilter:
+#     error:
+#     disabled: true
   ratelimit:
     enabled: true
     repository: BUCKET4J_JCACHE

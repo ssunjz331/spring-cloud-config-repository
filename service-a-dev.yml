@@ -39,3 +39,6 @@ service-b:
 fallback:
   message:
     detail: OMG, Fallback happened!!!
+    
+test:
+  message: it is test1

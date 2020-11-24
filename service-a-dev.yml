@@ -38,4 +38,4 @@ service-b:
     
 fallback:
   message:
-    detail: OMG, Fallback happened!!!
+    detail: OMG, Fallback happened---

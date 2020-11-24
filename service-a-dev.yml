@@ -34,3 +34,8 @@ service-b:
   ribbon:
     MaxAutoRetries: 0
     MaxAutoRetriesNextServer: 1
+    
+    
+fallback:
+  message:
+    detail: OMG, Fallback happened

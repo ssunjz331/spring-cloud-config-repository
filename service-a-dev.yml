@@ -48,7 +48,7 @@ service-b:
     
 fallback:
   message:
-    detail: OMG, Fallback happened12345678
+    detail: OMG, Fallback happened123456789
     
 test:
-  message: it is test123
+  message: it is test1234

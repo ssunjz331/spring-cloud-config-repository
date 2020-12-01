@@ -52,3 +52,6 @@ test2:
     
 test:
   message: it is test
+  
+test3:
+  message : fallback test message in config

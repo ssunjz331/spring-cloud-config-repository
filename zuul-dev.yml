@@ -21,9 +21,9 @@ zuul:
       serviceId: service-b
       stripPrefix: true
       
-#  SendErrorFilter:
-#    error:
-#    disable: true
+  SendErrorFilter:
+    error:
+      disable: true
    
   ratelimit:
     enabled: true

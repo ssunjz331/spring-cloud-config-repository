@@ -46,9 +46,9 @@ service-b:
     MaxAutoRetriesNextServer: 1
     
     
-test2:
-  message:
-    detail: OMG, Fallback happened12
+# test2:
+#   message:
+#     detail: OMG, Fallback happened12
     
 test:
   message: it is test

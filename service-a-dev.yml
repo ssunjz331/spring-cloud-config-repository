@@ -48,7 +48,7 @@ service-b:
     
 test2:
   message:
-    detail: OMG, Fallback happened
+    detail: OMG, Fallback happened1
     
 test:
   message: it is test

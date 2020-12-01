@@ -51,4 +51,4 @@ test2:
     detail: OMG, Fallback happened
     
 test:
-  message: it is test12345
+  message: it is test

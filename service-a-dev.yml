@@ -50,8 +50,8 @@ service-b:
 #   message:
 #     detail: OMG, Fallback happened12
     
-test:
-  message: it is test
+# test:
+#   message: it is test
   
 test3:
   message : fallback test message in config1

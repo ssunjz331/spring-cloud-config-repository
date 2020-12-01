@@ -20,7 +20,6 @@ zuul:
       path: /service-b/**
       serviceId: service-b
       stripPrefix: true
-      
   SendErrorFilter:
     error:
       disable: true

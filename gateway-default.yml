@@ -29,7 +29,7 @@ spring:
             - Method=GET,POST
           filters:
             - RemoveRequestHeader=Cookie
-#            - RewritePath=/service/(?<segment>.*), /$\{segment}
+            - RewritePath=/service/(?<segment>.*), /$\{segment}
         - id: service
           uri: lb://SERVICE
           predicates:
@@ -37,7 +37,7 @@ spring:
             - Method=GET
           filters:
             - RemoveRequestHeader=Cookie
-#            - RewritePath=/service/(?<segment>.*), /$\{segment}
+            - RewritePath=/service/(?<segment>.*), /$\{segment}
 
 
 

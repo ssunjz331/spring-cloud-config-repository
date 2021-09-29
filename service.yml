@@ -1,6 +1,6 @@
 
-# server:
-#   port: 0
+server:
+  port: 8010
 
 
 spring:

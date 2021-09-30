@@ -1,6 +1,9 @@
 
 server:
   port: 8010
+  servlet:
+    context-path: /svc2
+
 
 
 spring:

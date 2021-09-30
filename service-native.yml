@@ -18,11 +18,11 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 
 greeting:
-  message: Hi
+  message: native
 
 
 management:
   endpoints:
     web:
       exposure:
-        include: refresh, health, beans
+        include: refresh, health, beans, httptrace, busrefresh, info, metrics, prometheus

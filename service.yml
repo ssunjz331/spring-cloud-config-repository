@@ -6,6 +6,8 @@ server:
 spring:
   application:
     name: service
+  servlet:
+    context-path: /svc1
 
 
 eureka:

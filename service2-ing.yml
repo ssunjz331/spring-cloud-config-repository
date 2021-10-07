@@ -1,8 +1,8 @@
 
 server:
   port: 8020
-#   servlet:
-#     context-path: /svc2
+  servlet:
+    context-path: /svc2
 
 
 

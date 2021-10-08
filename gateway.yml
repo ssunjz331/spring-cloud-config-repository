@@ -42,6 +42,22 @@ spring:
             - RemoveRequestHeader=Cookie
             - RewritePath=/service/(?<segment>.*), /$\{segment}
             
+        - id: service2
+          uri: lb://SERVICE2
+          predicates:
+            - Path=/service2/actuator/**
+            - Method=GET,POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/service2/(?<segment>.*), /$\{segment}
+        - id: service2
+          uri: lb://SERVICE2
+          predicates:
+            - Path=/service2/**
+            - Method=GET,POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/service2/(?<segment>.*), /$\{segment}
        
 
 

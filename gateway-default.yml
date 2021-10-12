@@ -1,3 +1,4 @@
+
 server:
   port: 8000
 
@@ -5,19 +6,17 @@ eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
+    registry-fetch-interval-seconds: 30
 #     service-url:
 #       defaultZone: http://localhost:8761/eureka
   instance:
-    lease-renewal-interval-in-seconds: 2
-    lease-expiration-duration-in-seconds: 10
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 5
+ 
 
 spring:
   application:
     name: gateway
-  rabbitmq:
-    port: 5672
-    username: guest
-    password: guest
 
   cloud:
     gateway:
@@ -44,7 +43,7 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/service/(?<segment>.*), /$\{segment}
-
+            
         - id: service2
           uri: lb://SERVICE2
           predicates:
@@ -61,6 +60,8 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/service2/(?<segment>.*), /$\{segment}
+       
+
 
 
 

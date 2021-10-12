@@ -30,7 +30,7 @@ spring:
         - id: service
           uri: lb://SERVICE
           predicates:
-            - Path=/
+            - Path=/**
             - Method=GET,POST
           filters:
             - RemoveRequestHeader=Cookie
